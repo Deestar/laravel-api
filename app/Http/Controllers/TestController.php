@@ -10,9 +10,11 @@ class TestController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Laratest $laratest)
     {
-        //
+        return response()->json([
+            "testnames" => $laratest->all(),
+        ]);
     }
 
     /**
