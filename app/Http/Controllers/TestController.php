@@ -26,7 +26,7 @@ class TestController extends Controller
             "name" => "required|min:4|string",
         ]);
         Laratest::create($validated);
-        return response()->json($request->name . "Created");
+        return response()->json($request->name . " Created");
     }
 
     /**
