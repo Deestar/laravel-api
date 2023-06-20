@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +14,4 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::middleware('auth:sanctum')->get('/user', );
-Route::get("/name", [TestController::class, "index"]);
-Route::post("/name", [TestController::class, "store"]);
+Route::get('/products', []);

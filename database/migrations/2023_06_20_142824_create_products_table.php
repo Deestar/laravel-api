@@ -11,9 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('laratests', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->longText("name");
+            $table->text('name');
+            $table->integer('price');
+            $table->text('color');
+            $table->longText('image');
+            $table->integer('likes');
+            $table->text('type');
+            $table->boolean('trending');
             $table->timestamps();
         });
     }
@@ -23,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('laratests');
+        Schema::dropIfExists('products');
     }
 };
