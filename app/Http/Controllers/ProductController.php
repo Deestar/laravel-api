@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -9,9 +10,11 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index($limit, Products $products)
     {
-        //
+        // Gets top liked products
+        $topliked = $products->orderBy('likes', 'desc')->limit($limit)->get();
+        return response()->json($topliked);
     }
 
     /**

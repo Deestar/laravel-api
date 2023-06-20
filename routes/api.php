@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,4 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
  */
-
-Route::middleware('auth:sanctum')->get('/user', );
-Route::get('/products', []);
+Route::get('/products/{limit}', [ProductController::class, 'index'])->middleware('reqverify');
